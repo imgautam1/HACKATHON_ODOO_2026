@@ -14,20 +14,46 @@ session_start();
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-html { scroll-behavior:smooth; }
-body { background:#f7fafc; }
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#f7fafc;
+}
 
 /* Feature hover animation */
-.feature-card { transition:all .3s ease; }
-.feature-card:hover { transform:translateY(-8px); box-shadow:0 20px 25px rgba(0,0,0,0.15); }
+.feature-card{
+transition:all .3s ease;
+}
+
+.feature-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 25px rgba(0,0,0,0.15);
+}
 
 /* Button animation */
-.btn { transition:all .3s ease; }
-.btn:hover { transform:scale(1.05); }
+.btn{
+transition:all .3s ease;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
 
 /* Fade animation */
-.fade { opacity:0; transform:translateY(40px); transition:all 0.8s ease; }
-.fade.show { opacity:1; transform:translateY(0); }
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
 </style>
 
 </head>
@@ -35,153 +61,206 @@ body { background:#f7fafc; }
 <body>
 
 <!-- NAVBAR -->
+
 <nav class="bg-white shadow sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold text-blue-600">CoreInventory</h1>
-    <ul class="flex space-x-8 font-medium">
-      <li><a href="#home" class="hover:text-blue-600">Home</a></li>
-      <li><a href="#features" class="hover:text-blue-600">Features</a></li>
-      <li><a href="#workflow" class="hover:text-blue-600">How It Works</a></li>
-      <li><a href="#benefits" class="hover:text-blue-600">Benefits</a></li>
-      <li><a href="#team" class="hover:text-blue-600">Team</a></li>
-    </ul>
-    <div class="space-x-4">
-      <?php if(isset($_SESSION['user_id'])) { ?>
-      <a href="dashboard.php" class="btn border px-4 py-2 rounded hover:bg-gray-100">Dashboard</a>
-      <a href="logout.php" class="btn bg-red-500 text-white px-5 py-2 rounded">Logout</a>
-      <?php } else { ?>
-      <a id="loginBtn" href="login.php" class="btn border px-4 py-2 rounded hover:bg-gray-100">Login</a>
-      <a id="getStartedBtn" href="signup.php" class="btn bg-blue-600 text-white px-5 py-2 rounded">Get Started</a>
-      <?php } ?>
-    </div>
-  </div>
+
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+<h1 class="text-2xl font-bold text-blue-600">
+CoreInventory
+</h1>
+
+<ul class="flex space-x-8 font-medium">
+
+<li><a href="#home" class="hover:text-blue-600">Home</a></li>
+<li><a href="#features" class="hover:text-blue-600">Features</a></li>
+<li><a href="#workflow" class="hover:text-blue-600">How It Works</a></li>
+<li><a href="#benefits" class="hover:text-blue-600">Benefits</a></li>
+
+</ul>
+
+<div class="space-x-4">
+
+<?php if(isset($_SESSION['user_id'])){ ?>
+
+<a href="dashboard.php" class="btn border px-4 py-2 rounded hover:bg-gray-100">
+Dashboard
+</a>
+
+<a href="logout.php" class="btn bg-red-500 text-white px-5 py-2 rounded">
+Logout
+</a>
+
+<?php } else { ?>
+
+<a href="index.php" class="btn border px-4 py-2 rounded hover:bg-gray-100">
+Login
+</a>
+
+<a href="index.php" class="btn bg-blue-600 text-white px-5 py-2 rounded">
+Get Started
+</a>
+
+<?php } ?>
+
+</div>
+
+</div>
+
 </nav>
 
+
 <!-- HERO SECTION -->
-<section id="home" class="py-24 text-white relative bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');">
-  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-  <div class="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-    <div>
-      <h1 class="text-5xl font-bold mb-6">Smart Inventory Management for Modern Warehouses</h1>
-      <p class="text-lg mb-8">Track products, monitor stock movements, and manage warehouses in real time with CoreInventory.</p>
-      <div class="space-x-4">
-        <a id="startInventoryBtn" href="login.php" class="btn bg-white text-blue-600 px-6 py-3 rounded font-semibold">Start Managing Inventory</a>
-        <button class="btn border border-white px-6 py-3 rounded">View Demo</button>
-      </div>
-    </div>
-    <img src="https://cdn-icons-png.flaticon.com/512/2630/2630839.png" class="w-96 mx-auto">
-  </div>
+
+<section id="home" class="py-24 text-white relative bg-cover bg-center"
+style="background-image:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d');">
+
+<div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+<div class="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+<div>
+
+<h1 class="text-5xl font-bold mb-6">
+Smart Inventory Management for Modern Warehouses
+</h1>
+
+<p class="text-lg mb-8">
+Track products, monitor stock movements, and manage warehouses in real time with CoreInventory.
+</p>
+
+<div class="space-x-4">
+
+<a href="dashboard.php" class="btn bg-white text-blue-600 px-6 py-3 rounded font-semibold">
+Start Managing Inventory
+</a>
+
+<button class="btn border border-white px-6 py-3 rounded">
+View Demo
+</button>
+
+</div>
+
+</div>
+
+<img src="https://cdn-icons-png.flaticon.com/512/2630/2630839.png" class="w-96 mx-auto">
+
+</div>
+
 </section>
+
 
 <!-- PROBLEMS -->
+
 <section class="py-20 fade">
-  <div class="max-w-6xl mx-auto text-center px-6">
-    <h2 class="text-4xl font-bold mb-8">Problems with Traditional Inventory Systems</h2>
-    <div class="grid md:grid-cols-4 gap-8">
-      <div class="p-6 bg-white rounded shadow">📄<h3 class="font-semibold mt-2">Manual Registers</h3><p class="text-sm text-gray-600">Stock tracked on paper leading to errors.</p></div>
-      <div class="p-6 bg-white rounded shadow">📊<h3 class="font-semibold mt-2">Excel Tracking</h3><p class="text-sm text-gray-600">Hard to maintain and update stock records.</p></div>
-      <div class="p-6 bg-white rounded shadow">❌<h3 class="font-semibold mt-2">Stock Mismatch</h3><p class="text-sm text-gray-600">Physical stock differs from records.</p></div>
-      <div class="p-6 bg-white rounded shadow">⏱<h3 class="font-semibold mt-2">Slow Operations</h3><p class="text-sm text-gray-600">Warehouse operations become inefficient.</p></div>
-    </div>
-  </div>
+
+<div class="max-w-6xl mx-auto text-center px-6">
+
+<h2 class="text-4xl font-bold mb-8">
+Problems with Traditional Inventory Systems
+</h2>
+
+<div class="grid md:grid-cols-4 gap-8">
+
+<div class="p-6 bg-white rounded shadow">
+📄
+<h3 class="font-semibold mt-2">Manual Registers</h3>
+<p class="text-sm text-gray-600">
+Stock tracked on paper leading to errors.
+</p>
+</div>
+
+<div class="p-6 bg-white rounded shadow">
+📊
+<h3 class="font-semibold mt-2">Excel Tracking</h3>
+<p class="text-sm text-gray-600">
+Hard to maintain and update stock records.
+</p>
+</div>
+
+<div class="p-6 bg-white rounded shadow">
+❌
+<h3 class="font-semibold mt-2">Stock Mismatch</h3>
+<p class="text-sm text-gray-600">
+Physical stock differs from records.
+</p>
+</div>
+
+<div class="p-6 bg-white rounded shadow">
+⏱
+<h3 class="font-semibold mt-2">Slow Operations</h3>
+<p class="text-sm text-gray-600">
+Warehouse operations become inefficient.
+</p>
+</div>
+
+</div>
+
+</div>
+
 </section>
+
 
 <!-- FEATURES -->
+
 <section id="features" class="py-24 bg-gray-100 fade">
-  <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center mb-16">Core Features</h2>
-    <div class="grid md:grid-cols-3 gap-10">
-      <div class="feature-card bg-white p-8 rounded shadow">📦<h3 class="text-xl font-semibold mt-4">Product Management</h3><p class="text-gray-600 mt-2">Create products with SKU, category, and stock levels.</p></div>
-      <div class="feature-card bg-white p-8 rounded shadow">📥<h3 class="text-xl font-semibold mt-4">Incoming Stock</h3><p class="text-gray-600 mt-2">Record goods received from suppliers.</p></div>
-      <div class="feature-card bg-white p-8 rounded shadow">🚚<h3 class="text-xl font-semibold mt-4">Delivery Orders</h3><p class="text-gray-600 mt-2">Manage outgoing shipments to customers.</p></div>
-      <div class="feature-card bg-white p-8 rounded shadow">🔄<h3 class="text-xl font-semibold mt-4">Internal Transfers</h3><p class="text-gray-600 mt-2">Move inventory between warehouses or racks.</p></div>
-      <div class="feature-card bg-white p-8 rounded shadow">⚖<h3 class="text-xl font-semibold mt-4">Stock Adjustments</h3><p class="text-gray-600 mt-2">Correct mismatches between recorded and physical stock.</p></div>
-      <div class="feature-card bg-white p-8 rounded shadow">🏭<h3 class="text-xl font-semibold mt-4">Multi-Warehouse</h3><p class="text-gray-600 mt-2">Track stock across multiple locations.</p></div>
-    </div>
-  </div>
-</section>
 
-<!-- TEAM MEMBERS -->
-<section id="team" class="py-24 bg-white fade">
-  <div class="max-w-7xl mx-auto px-6 text-center">
-    <h2 class="text-4xl font-bold mb-16">Meet Our Team</h2>
-    <div class="grid md:grid-cols-3 gap-10">
+<div class="max-w-7xl mx-auto px-6">
 
-      <div class="p-6 bg-gray-100 rounded shadow transform transition duration-500 hover:-translate-y-3 hover:shadow-xl">
-        <img src="assets/images/Keval.png" class="w-32 h-32 mx-auto rounded-full mb-4" alt="Keval Sheth">
-        <h3 class="text-xl font-semibold">Keval Sheth</h3>
-      </div>
+<h2 class="text-4xl font-bold text-center mb-16">
+Core Features
+</h2>
 
-      <div class="p-6 bg-gray-100 rounded shadow transform transition duration-500 hover:-translate-y-3 hover:shadow-xl">
-        <img src="assets/images/Yug.png" class="w-32 h-32 mx-auto rounded-full mb-4" alt="Yug Patel">
-        <h3 class="text-xl font-semibold">Yug Patel</h3>
-      </div>
+<div class="grid md:grid-cols-3 gap-10">
 
-      <div class="p-6 bg-gray-100 rounded shadow transform transition duration-500 hover:-translate-y-3 hover:shadow-xl">
-        <img src="assets/images/Gautum.png" class="w-32 h-32 mx-auto rounded-full mb-4" alt="Gautum Makwana">
-        <h3 class="text-xl font-semibold">Gautum Makwana</h3>
-      </div>
+<div class="feature-card bg-white p-8 rounded shadow">
+📦
+<h3 class="text-xl font-semibold mt-4">Product Management</h3>
+<p class="text-gray-600 mt-2">
+Create products with SKU, category, and stock levels.
+</p>
+</div>
 
-    </div>
-  </div>
-</section>
+<div class="feature-card bg-white p-8 rounded shadow">
+📥
+<h3 class="text-xl font-semibold mt-4">Incoming Stock</h3>
+<p class="text-gray-600 mt-2">
+Record goods received from suppliers.
+</p>
+</div>
 
-<!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-300 py-8 mt-12">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+<div class="feature-card bg-white p-8 rounded shadow">
+🚚
+<h3 class="text-xl font-semibold mt-4">Delivery Orders</h3>
+<p class="text-gray-600 mt-2">
+Manage outgoing shipments to customers.
+</p>
+</div>
 
-    <!-- About -->
-    <div>
-      <h3 class="text-xl font-semibold text-white mb-4">CoreInventory</h3>
-      <p class="text-sm">Smart Inventory Management System - Track products, manage stock, and streamline operations efficiently.</p>
-    </div>
+<div class="feature-card bg-white p-8 rounded shadow">
+🔄
+<h3 class="text-xl font-semibold mt-4">Internal Transfers</h3>
+<p class="text-gray-600 mt-2">
+Move inventory between warehouses or racks.
+</p>
+</div>
 
-    <!-- Quick Links -->
-    <div>
-      <h3 class="text-xl font-semibold text-white mb-4">Quick Links</h3>
-      <ul class="space-y-2 text-sm">
-        <li><a href="#home" class="hover:text-white">Home</a></li>
-        <li><a href="#features" class="hover:text-white">Features</a></li>
-        <li><a href="#workflow" class="hover:text-white">How It Works</a></li>
-        <li><a href="#benefits" class="hover:text-white">Benefits</a></li>
-        <li><a href="#team" class="hover:text-white">Team</a></li>
-      </ul>
-    </div>
+<div class="feature-card bg-white p-8 rounded shadow">
+⚖
+<h3 class="text-xl font-semibold mt-4">Stock Adjustments</h3>
+<p class="text-gray-600 mt-2">
+Correct mismatches between recorded and physical stock.
+</p>
+</div>
 
-    <!-- Contact -->
-    <div>
-      <h3 class="text-xl font-semibold text-white mb-4">Contact Us</h3>
-      <p class="text-sm">Email: support@coreinventory.com</p>
-      <p class="text-sm">Phone: +91 8980606446</p>
-      <div class="flex space-x-4 mt-3">
-        <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="hover:text-white"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
+<div class="feature-card bg-white p-8 rounded shadow">
+🏭
+<h3 class="text-xl font-semibold mt-4">Multi-Warehouse</h3>
+<p class="text-gray-600 mt-2">
+Track stock across multiple locations.
+</p>
+</div>
 
-  </div>
+</div>
 
-  <div class="text-center mt-8 text-sm text-gray-500">
-    &copy; <?= date("Y") ?> CoreInventory. All rights reserved.
-  </div>
-</footer>
-
-<script>
-// Animate fade sections on scroll
-const faders = document.querySelectorAll('.fade');
-const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver(function(entries, observer){
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){ 
-            entry.target.classList.add('show'); 
-            observer.unobserve(entry.target);
-        }
-    });
-}, appearOptions);
-
-faders.forEach(fader => { appearOnScroll.observe(fader); });
-</script>
-
-</body>
-</html>
+</div>
