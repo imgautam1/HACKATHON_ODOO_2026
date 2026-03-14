@@ -93,11 +93,11 @@ Logout
 
 <?php } else { ?>
 
-<a href="index.php" class="btn border px-4 py-2 rounded hover:bg-gray-100">
+<a href="login.php" class="btn border px-4 py-2 rounded hover:bg-gray-100">
 Login
 </a>
 
-<a href="index.php" class="btn bg-blue-600 text-white px-5 py-2 rounded">
+<a href="login.php" class="btn bg-blue-600 text-white px-5 py-2 rounded">
 Get Started
 </a>
 
